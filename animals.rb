@@ -1,19 +1,6 @@
-class Bird
-    attr_acessor :name, :age
-
-    def talk (name)
-        puts "#{@name} says Chirp! Chirp!"
-    end
-    def move(name, destination)
-        puts "#{@name} flies to the #{destination}." 
-    end
-    def report_age
-        puts "#{@name} is #{age} years old"
-    end
-end
-
-class Dog
+class Animal
     attr_reader :name, :age
+
     def name=(value)
         if value == ""
             raise "Name can't be blank!"
@@ -26,34 +13,59 @@ class Dog
         end
         @age = value
     end
-    def talk (name)
+    def talk
         puts "#{@name} says Bark!"
     end
-    def move(name, destination)
+    def move(destination)
         puts "#{@name} runs to the #{destination}." 
     end
     def report_age
         puts "#{@name} is #{@age} years old"
     end
 end
-class Cat
-    attr_acessor :name, :age
 
-    def talk (name)
-        puts "#{n@ame} says Meow!"
+class Bird < Animal
+
+    def talk
+        puts "#{@name} says Chirp! Chirp!"
     end
-    def move(name, destination)
-        puts "#{@name} runs to the #{destination}." 
-    end  
-    def report_age
-        puts "#{@name} is #{age} years old"
-    end 
+    def move (destination)
+        puts "#{@name} flies to the #{destination}." 
+    end
+
 end
 
-bird = Bird.new 
-dog = Dog.new 
-cat = Cat.new
-bird.move("tree") 
-dog.talk 
-bird.talk 
-cat.move("house")
+class Dog < Animal
+    def to_s
+        "#{@name} the dog, age #{age}" 
+    end
+end
+class Cat < Animal
+    def talk
+        puts "#{@name} says Meow!"
+    end  
+end
+
+class Armadillo < Animal
+    def move(destination)
+        puts "#{@name} unrolls!"
+        super
+    end
+end
+
+whiskers = Cat.new 
+whiskers.name = "Whiskers" 
+polly = Bird.new 
+polly.name = "Polly"
+whiskers.talk 
+polly.talk
+dillon = Armadillo.new
+dillon.name = "Dillon"
+dillon.move("burrow")
+
+lucy = Dog.new 
+lucy.move("test")
+rex = Dog.new 
+rex.name = "Rex" 
+rex.age = 2
+puts lucy.to_s, rex.to_s
