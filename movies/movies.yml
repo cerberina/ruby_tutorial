@@ -1,0 +1,26 @@
+---
+1: !ruby/object:Movie
+  title: Titanic
+  director: James Francis Cameron
+  year: '1997'
+  id: 1
+2: !ruby/object:Movie
+  title: Star Wars
+  director: George Lucas
+  year: '1977'
+  id: 2
+3: !ruby/object:Movie
+  title: Ghostbusters
+  director: Ivan Reitman
+  year: '1984'
+  id: 3
+4: !ruby/object:Movie
+  title: Forrest Gump
+  director: Robert Zemeckis
+  year: '1994'
+  id: 4
+5: !ruby/object:Movie
+  title: The Mask
+  director: Chuck Russell
+  year: '1994'
+  id: 5
